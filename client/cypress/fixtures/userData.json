@@ -1,0 +1,18 @@
+{
+    "admUser": {
+        "email": "test@test.com",
+        "pass": "test123"
+    },
+    "commonUser": {
+        "username": "test@test.com",
+        "password": "test123"
+    },
+    "wrongUser": {
+        "username": "test2@test.com",
+        "password": "test123"
+    },
+    "invalidEmail": {
+        "username": "testtesttest",
+        "password": "test123"
+    }
+}
