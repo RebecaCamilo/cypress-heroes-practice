@@ -20,5 +20,15 @@ describe("hero-home-page", () => {
             cy.contains('button', 'Ok').should('be.visible');
         });
         
+        it('donate to hero should alert the user need to login', () => {
+            cy.visit('http://localhost:3000/heroes');
+            cy.get('button[data-cy="money"]').first().click();
+
+            cy.get('.open.modal').should('be.visible');
+            cy.contains('h5', 'You must log in to hire this hero.').should('be.visible');
+            cy.contains('button', 'Ok').should('be.visible');
+        });
+        
       });
   });
+  
