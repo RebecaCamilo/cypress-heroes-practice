@@ -29,7 +29,7 @@ describe("hero-home-page", () => {
             cy.contains('button', 'Ok').should('be.visible');
         });
 
-        it.only('user not logged can see the login button', () => {
+        it('user not logged can see the login button', () => {
             cy.visit('http://localhost:3000/heroes');
             cy.contains('button', 'Login').click();
 
@@ -42,6 +42,13 @@ describe("hero-home-page", () => {
             cy.get('[data-cy="password"]').parents('label').should('contain.text', 'Password');
         });
         
-      });
+    });
+
+    describe('Verify error messages in Login modal', () => {
+        it.only('login with empty user and pass', () => {
+            cy.visit('http://localhost:3000/heroes');
+            cy.contains('button', 'Login').click();
+        })
+    })
   });
   
